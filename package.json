@@ -15,7 +15,8 @@
     "prettier": "^1.19.1",
     "simple-git": "1.132.0",
     "ts-node": "^8.6.2",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@types/chai": "^4.2.11",
@@ -26,7 +27,9 @@
   },
   "scripts": {
     "tsc": "tsc",
-    "test": " mocha --recursive --require ts-node/register .script/tests/**/*.test.ts"
+    "test": " mocha --recursive --require ts-node/register .script/tests/**/*.test.ts",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -37,5 +40,6 @@
   "bugs": {
     "url": "https://github.com/Azure/Azure-Sentinel/issues"
   },
-  "homepage": "https://github.com/Azure-Sentinel#readme"
+  "homepage": "https://github.com/Azure-Sentinel#readme",
+  "snyk": true
 }
